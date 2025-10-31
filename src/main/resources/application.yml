@@ -1,2 +1,17 @@
 greeting:
   message: "hello"
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: 123
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/domanivendas
+
+  # 2. Hibernate (Panache) Settings
+  hibernate-orm:
+    database:
+      # This tells Hibernate to automatically create/update your tables
+      # based on your @Entity classes.
+      # Use "validate" or "none" in production.
+      generation: update
