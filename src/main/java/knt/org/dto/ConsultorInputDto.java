@@ -13,7 +13,7 @@ public class ConsultorInputDto {
     @NonNull
     String cargo;
     @NonNull
-    String gt;
+    String area;
     @NonNull
     String nome;
 

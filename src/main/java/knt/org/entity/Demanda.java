@@ -2,6 +2,7 @@ package knt.org.entity;
 
 
 import jakarta.persistence.*;
+import knt.org.dto.DemandaInputDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,5 +39,10 @@ public class Demanda {
             @JoinColumn(name = "consultor_id")
     Consultor dono;
 
-
+    public Demanda(DemandaInputDto dto,Consultor dono){
+        this.descricao = dto.getDescricao();
+        this.dataCriacao =Timestamp.valueOf(LocalDateTime.now());
+        this.status = dto.getStatus();
+        this.dono = dono;
+    }
 }

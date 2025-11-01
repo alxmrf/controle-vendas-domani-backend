@@ -21,11 +21,12 @@ public class Consultor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @Column(unique = true)
     String username;
 
     String cargo;
 
-    String gt;
+    String area;
 
     String nome;
 
@@ -43,8 +44,8 @@ public class Consultor {
     public Consultor(ConsultorInputDto dto){
 
         this.username = dto.getUsername();
-        this.cargo = dto.getUsername();
-        this.gt = dto.getGt();
+        this.cargo = dto.getCargo();
+        this.area = dto.getArea();
         this.nome = dto.getNome();
     }
 
