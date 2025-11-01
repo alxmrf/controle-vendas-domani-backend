@@ -11,7 +11,5 @@ quarkus:
   # 2. Hibernate (Panache) Settings
   hibernate-orm:
     database:
-      # This tells Hibernate to automatically create/update your tables
-      # based on your @Entity classes.
-      # Use "validate" or "none" in production.
-      generation: update
+      generation: drop-and-create
+    sql-load-script: import.sql
